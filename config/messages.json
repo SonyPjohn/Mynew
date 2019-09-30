@@ -1,0 +1,30 @@
+{
+
+    "common": {
+        "err": {
+            "somthingwrong": "Something went wrong",
+            "invalidphoto": " Invalid photo ",
+            "allfieldsrequired": " All fileds are required"
+        },
+        "success": {
+            "acccreated": "Account Created succesfully"
+        }
+    },
+    "signup": {
+        "err": {
+            "emailexist": "Email already exist"
+        },
+        "success": {
+            "acccreated": "Account Created succesfully"
+        }
+    },
+    "login": {
+        "err": {
+            "usernotfound": "User not found",
+            "wrongpassword": " Wrong passsword "
+        },
+        "success": {
+            "loginsuccessfully": "Login successfully"
+        }
+    }
+}

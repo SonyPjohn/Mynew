@@ -1,0 +1,13 @@
+
+{
+    "development": {
+        "PORT": 3200,
+        "MONGODB_URI": "mongodb://localhost:27017/Eshop"
+       
+    },
+    "production": {
+        "PORT": 4200,
+        "MONGODB_URI": "mongodb:/register/Eshop"
+    
+    }
+}

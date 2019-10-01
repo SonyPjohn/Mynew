@@ -100,10 +100,11 @@ function decodeBase64Image(dataString) {
 
 
 router.post('/authenticate', (req, res) => {
-    const username = req.body.username;
-    const password = myTrim(req.body.password);
+    console.log('login reached');
+    const username = req.body.email;
+    const password = req.body.password;
 
-    Login.findOne({ username: username }, (err, user) => {
+    User.findOne({ email: username }, (err, user) => {
         if (err) throw err;
         if (!user) {
             res.status(400).json({ msg: messages.login.err.usernotfound })

@@ -41,9 +41,14 @@ export class CommonService {
       case 'register':
         return this.httpClient.post(apiPath, data, { headers: Headers, responseType: 'json', observe: 'response' });
 
-      case 'login':
-        return this.httpClient.post(apiPath, data, { headers: Headers, responseType: 'json', observe: 'response' });
-
     }
+  }
+
+  loadToken() {
+    this.token = localStorage.getItem('ls_token');
+  }
+
+  logout(apiType, endPoint) {
+ 
   }
 }

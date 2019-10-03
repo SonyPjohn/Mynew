@@ -16,7 +16,11 @@ export const Config = {
         api: {
             endpoints: {
                 register: '/api/register',
-                login : '/api/authenticate',
+                login: '/api/authenticate',
+                getwomenscloth: '/api/getwomenscloth',
+                getallproducts: '/api/getallproducts',
+                logout: '/api/logout',
+                getloggeduser: '/api/getloggeduser'
             }
         },
     }

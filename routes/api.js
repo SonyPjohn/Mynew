@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 // const Login = require('./models/login');
 var fs = require('fs');
 const User = mongoose.model('user');
-// const Cart = mongoose.model('Cart');
+const Product = mongoose.model('product');
 // const Order = mongoose.model('Order');
 // const Orderdetails = mongoose.model('Orderdetails');
 
@@ -149,7 +149,8 @@ comparePassword = function (candPass, hash, callback) {
     })
 }
 
-router.get('/getAllProduct', (req, res, next) => {
+router.get('/getwomenscloth', (req, res, next) => {
+    console.log('women reached');
     Product.find({}, (err, products) => {
         if (!products) {
             return res.json({ success: false, msg: 'error' });

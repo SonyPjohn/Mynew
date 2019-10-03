@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonService } from 'src/app/providers/common.service';
 import { messages } from 'src/app/config/messages';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/providers/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,21 +10,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  @Input() myInput: string;
   user = {
-    email: '',
+    email: '1235',
     password: ''
   };
+  userdata: any;
+  token: any;
 
-  constructor(private commonService: CommonService, private routes: Router) { }
+  constructor(private commonService: CommonService, private routes: Router, private loginService: LoginService) { }
 
   ngOnInit() {
+    console.log('1234', this.myInput);
   }
 
   loginSubmit(user) {
     console.log(user);
-    this.commonService.apiEndPointsCall('api', 'login', this.user).subscribe(res => {
+    this.loginService.login('api', 'login', user).subscribe(res => {
       console.log(res);
       if (res.status === 200) {
+        this.userdata = res.body['user'];
+        this.token = res.body['token'];
+        console.log('1234', this.token);
+        this.loginService.storeUserData(this.token, this.userdata);
+        console.log('1');
         this.routes.navigate(['/']);
        } else {
         alert(res);

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   secret: 'secret123',
   debug: true,
-  apiserver: 'dev'
+  apiserver: 'dev',
 };
 
 /*
